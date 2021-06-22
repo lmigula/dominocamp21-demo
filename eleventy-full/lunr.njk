@@ -1,0 +1,17 @@
+---
+permalink: /data.json
+---
+
+[
+{% for name in fakenames %}
+{
+   "firstname":"{{name.FirstName}}",
+   "unid":"{{ name['@unid'] }}",
+   "lastname":"{{name.LastName}}",
+   "shortname":"{{name.ShortName}}",
+   "internetAddress":"{{name.InternetAddress}}",
+   "officeCity":"{{name.OfficeCity}}",
+   "officeStreet":"{{name.OfficeStreetAddress}}"
+} {% if loop.last == false %},{% endif %}
+{% endfor %} 
+]

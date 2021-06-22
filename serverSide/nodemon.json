@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "src",
+        "views"
+    ],
+    "ext": "js njk",
+    "ignore": [
+        "src/**/*.spec.ts"
+    ],
+    "exec": "node  ./src/app.js"
+}

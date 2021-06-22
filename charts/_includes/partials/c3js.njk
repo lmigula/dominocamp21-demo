@@ -1,0 +1,93 @@
+<div class="mdl-grid demo-content">
+
+    <div id="barChart"></div>
+
+</div>
+
+<div class="mdl-grid demo-content">
+
+    <div id="stackedBarChart"></div>
+</div>
+<div class=buttonBar>
+    <button onclick="saveAsPng('stackedBarChart')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+       saveAsPng
+    </button>
+    <button onclick="refreshData()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Daten aktualisieren
+    </button>
+
+</div>
+<div class="mdl-grid demo-content">
+
+    <div id="pieChart"></div>
+</div>
+<button onclick="saveAsPng('pieChart')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+       saveAsPng
+    </button>
+<div class="mdl-grid demo-content">
+    <div id="lineChart"></div>
+
+</div>
+
+<div class="mdl-grid demo-content">
+    <div id="splineChart"></div>
+
+</div>
+<div class=buttonBar>
+
+    <button onclick="refreshData()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Daten aktualisieren
+    </button>
+
+</div>
+<div class="mdl-grid demo-content">
+    <div id="areaSplineChart"></div>
+
+</div>
+
+<div class="mdl-grid demo-content">
+    <div id="gaugeChart"></div>
+
+</div>
+<div class=buttonBar></div>
+
+<canvas id="canvas"></canvas>
+<style>
+
+    .demo-content {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .container {
+        width: 90%;
+    }
+</style>
+<style>
+    .demo-content {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        margin-top: 50px;
+        height: 350px;
+        vertical-align: top;
+        overflow: hidden;
+    }
+    .demo-content svg {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<link href="css/c3.min.css" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script src="js/c3.min.js"></script>
+<script src="js/util.js"></script>
+
+<script src="js/loadc3.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>

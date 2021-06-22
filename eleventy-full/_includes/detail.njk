@@ -1,0 +1,93 @@
+{% extends "partials/_layout.njk" %}
+{% block content %}
+ <main class="mdl-layout__content">
+        <div class="page-content">
+
+  <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+          <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">Basic</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+              Name
+            </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+                  {{name.FirstName}}
+                  {{name.LastName}}
+                </div>
+
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+              Short name/UserID:
+            </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+                  {{name.ShortName}}
+                </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+             officezip
+            </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+                  {{name.OfficeZIP}}
+                </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+             OfficeStreetAddress
+            </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+                  {{name.OfficeStreetAddress}}
+                </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+             OfficeCountry
+            </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+                  {{name.OfficeCountry}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="mdl-cell mdl-cell--6-col">
+          <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <h2 class="mdl-card__title-text">Mail</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+              Mail system:
+            </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+                  {{name.MailSystem}}
+                </div>
+                
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+              Internet address:
+            </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <!-- content here -->
+                  {{name.InternetAddress}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+ 
+        </div>
+    </main>
+{% endblock %}

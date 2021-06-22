@@ -1,0 +1,135 @@
+<div class="mdl-grid">
+    <div class="left">
+        <pre>
+ graph TD
+      A[Client] -->|tcp:123| B(Load Balancer)
+      B -->|tcp:456| C[ServerA]
+      B -->|tcp:456| D[ServerA]	
+</pre>
+    </div>
+    <div class="mermaid margin">
+    graph TD
+      A[Client] -->|tcp:123| B(Load Balancer)
+      B -->|tcp:456| C[ServerA]
+      B -->|tcp:456| D[ServerA]	
+    </div>
+</div>
+<div class="mdl-grid ">
+    <div class="left">
+        <pre>
+ sequenceDiagram
+        Alice->>John: Hello John, how are you?
+        loop Healthcheck
+            John->>John: Fight against hypochondria
+        end
+        Note right of John: Rational thoughts!
+        John-->>Alice: Great!
+        John->>Bob: How about you?
+        Bob-->>John: Jolly good!		
+</pre>
+    </div>
+    <div class="mermaid">
+        sequenceDiagram Alice->>John: Hello John, how are you? loop Healthcheck John->>John: Fight against hypochondria end Note
+        right of John: Rational thoughts! John-->>Alice: Great! John->>Bob: How about you? Bob-->>John: Jolly good!
+    </div>
+</div>
+<div class="mdl-grid ">
+    <div class="left">
+        <pre>
+stateDiagram
+	[*] --> Still
+	Still --> [*]
+
+	Still --> Moving
+	Moving --> Still
+	Moving --> Crash
+	Crash --> [*]
+					
+</pre>
+    </div>
+    <div class="mermaid">
+        stateDiagram [*] --> Still Still --> [*] Still --> Moving Moving --> Still Moving --> Crash Crash --> [*]
+    </div>
+</div>
+<div class="mdl-grid ">
+    <div class="left">
+        <pre>
+ stateDiagram
+    [*] --> First
+
+    state First {
+        [*] --> Second
+
+        state Second {
+            [*] --> second
+            second --> Third
+
+            state Third {
+                [*] --> third
+                third --> [*]
+            }
+        }
+    }		
+</pre>
+    </div>
+    <div class="mermaid">
+        stateDiagram [*] --> First state First { [*] --> Second state Second { [*] --> second second --> Third state Third { [*]
+        --> third third --> [*] } } }
+    </div>
+</div>
+<div class="mdl-grid ">
+    <div class="left">
+        <pre>
+ pie title Pets adopted by volunteers
+	"Dogs" : 386
+	"Cats" : 85
+	"Rats" : 15
+					
+</pre>
+    </div>
+    <div class="mermaid">
+        pie title Pets adopted by volunteers "Dogs" : 386 "Cats" : 85 "Rats" : 15
+    </div>
+</div>
+<div class="mdl-grid ">
+    <div class="left">
+        <pre>
+ gantt
+	title A Gantt Diagram
+	dateFormat  YYYY-MM-DD
+	section Section
+	A task           :a1, 2014-01-01, 30d
+	Another task     :after a1  , 20d
+	section Another
+	Task in sec      :2014-01-12  , 12d
+	another task      : 24d
+						
+</pre>
+    </div>
+    <div class="mermaid">
+        gantt title A Gantt Diagram dateFormat YYYY-MM-DD section Section A task :a1, 2014-01-01, 30d Another task :after a1 ,
+        20d section Another Task in sec :2014-01-12 , 12d another task : 24d
+    </div>
+</div>
+<style>
+    .demo-content {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .left {
+        width: 550px;
+        border: 1px solid #cdcdcd;
+        height: auto;
+        border-radius: 5px;
+    }
+    .mermaid {
+        height: auto;
+        width: 600px;
+    }
+    .margin {
+        margin-left: 25px;
+    }
+</style>
+<script src="js/util.js"></script>
+<script src="js/mermaid.min.js"></script>
+<script src="js/loadMermaid.js"></script>

@@ -1,0 +1,56 @@
+{% extends "partials/_layout.njk" %}
+{% block content %}
+  <main class="mdl-layout__content">
+    <div class="page-content">
+    
+      <form action="search"  method="get">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" name="search" id="search">
+          <label class="mdl-textfield__label" for="sample1">Suche</label>
+
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised">
+  Suche
+</button>
+      </form>
+  
+      {% if range %}
+      Zeige Einträge  {{range.start}}  -  {{ range.start + range.entries }} von insgesamt {{range.size}}
+      {% elif size %}
+      Es wurden {{size}} Einträge gefunden
+      {% endif %}
+      <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric">Name</th>
+            <th>Email</th>
+            <th>Firma</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for doc in docs %}
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">
+              <a href="/document/{{doc['unid']}}">
+                  {{doc.lastname}}
+                  {{doc.firstname}}
+                </a>
+              </td>
+              <td>{{doc['internetaddress']}}</td>
+              <td>{{doc['companyname']}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{% if range %}
+      <div class="pagination_section">
+        <a href="?start=0&count={{range.entries }}"><< Start</a>
+        <a href="?start={{ range.start  - range.entries }}&count={{range.entries }}" >vorherige Seite</a>
+        <a href="?start={{ range.start  + range.entries }}&count={{range.entries }}" >nächste Seite</a>
+        <a href="?start={{ range.size  - range.entries }}&count={{range.entries }}">Ende >></a>
+      </div>
+
+        {% endif %}
+    </div>
+  </main>
+{% endblock %}

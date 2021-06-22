@@ -1,0 +1,29 @@
+<div class=buttonBar>
+  <button onclick="addCircle()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Kreis hinzufügen
+    </button>
+  <button onclick="startAddMarker()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Marker einfügen
+    </button>
+</div>
+<div id="mapid"></div>
+
+<style>
+
+  .demo-content {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .container {
+    width: 90%;
+  }
+  #mapid {
+    height: 700px;
+  }
+</style>
+<link rel="stylesheet" href="css/leaflet.css"/>
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="js/leaflet.js"></script>
+<script src="js/faker.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/loadleaflet.js"></script>

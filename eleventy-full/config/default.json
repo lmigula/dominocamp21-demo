@@ -1,0 +1,8 @@
+{
+    "enviroment": "default",
+    "domino": {
+        "httpUser": "dominoUser",
+        "httpPassword": "password",
+        "fakenames": "lm/fakenames.nsf"
+    }
+}

@@ -1,0 +1,41 @@
+{% extends "partials/_layout.njk" %}
+{% block content %}
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <!-- Your content goes here 
+            {{ content | safe }}
+-->
+        </div>
+
+         <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
+  <thead>
+    <tr>
+    <th class="mdl-data-table__cell--non-numeric">Nummer</th>
+      <th class="mdl-data-table__cell--non-numeric">Datum</th>
+      <th>Produkte</th>
+      <th>VK</th>
+      <th>Summe</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% set overAllSum = 0 %}
+  {% for doc in docs %}
+    <tr>
+    <td class="mdl-data-table__cell--non-numeric">
+      <a href="/dominoDoc/{{doc.orderID}}">{{doc.orderID}}</a>
+    </td>
+      <td class="mdl-data-table__cell--non-numeric">{{doc.orderDateDT.data | dateFilter }}</td>
+      <td>{{doc.orderProducts| join("<br>") | safe}}</td>
+      <td>{{doc.amount| join("<br>") | safe}}</td>
+      <td>{{doc.amount | sum}}</td>
+      {% set overAllSum = overAllSum +  (doc.amount |sum)%}
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="4">Summe:</td>
+      <td >{{overAllSum}}</td>
+    </tr>
+  </tbody>
+</table>
+    </main>
+{% endblock %}

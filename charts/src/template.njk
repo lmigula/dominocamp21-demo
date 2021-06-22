@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Template</title>
+        <style>
+            .table {
+                width: 200px;
+                float: left;
+            }
+            .chart {
+                float: right;
+            }
+            #sales {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+            }
+            #sales td,
+            #sales th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            #sales th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #f2f2f2;
+                color: darkgrey;
+            }
+            #sales tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Übersicht der Stunden</h1>
+        <div class="table">
+            <table id="sales">
+                <thead>
+                    <tr>
+                        {% for header in tableheader %}
+                            <td>{{ header }}</td>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in tableBody %}
+                        <tr>
+                            {% for cell in row %}
+                                <td>
+                                    {{ cell }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="chart">
+            {{ svg | safe }}
+        </div>
+    </body>
+</html>

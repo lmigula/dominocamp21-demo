@@ -1,0 +1,23 @@
+{% extends "partials/_layout.njk" %}
+
+{% block content %}
+ <main class="mdl-layout__content">
+        <div class="page-content">
+ <form action="#" onSubmit=" doSearch(); return false;">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" name="search" id="search">
+          <label class="mdl-textfield__label" for="sample1">Suche</label>
+
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised">
+  Suche
+</button>
+      </form>
+      <div id="searchResults">
+      </div>
+        </div>
+    </main>
+    <script src="/static/js/lunr.js"></script>
+<script src="/static/js/lunr.helper.v2.js"></script>
+{% endblock %}
+

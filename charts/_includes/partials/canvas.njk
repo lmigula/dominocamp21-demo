@@ -1,0 +1,110 @@
+<style>
+    /*tools*/
+    #tools {
+        float: left;
+        width: 80px;
+        padding: 15px;
+    }
+</style>
+<style>
+    /*color palette*/
+    #colorPalette div {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 4px;
+    }
+    #black {
+        background-color: black;
+    }
+    #red {
+        background-color: red;
+    }
+    #green {
+        background-color: green;
+    }
+    #blue {
+        background-color: blue;
+    }
+</style>
+<style>
+    /*body*/
+    body {
+        background-color: #ccc;
+        overflow: hidden;
+    }
+</style>
+<style>
+    /*paint area*/
+    #paintArea {
+        width: 900px;
+        height: 600px;
+        background-color: #fff;
+        float: left;
+        position: relative;
+    }
+    #paintArea canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: crosshair;
+    }
+</style>
+<!--[if lt IE 9]> <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!--<script type="text/javascript" src="canvasPaint.js"></script>-->
+<script type="text/javascript">
+    var selectedColor = "black";
+
+    $(document).ready(function () {
+        $("#colorPalette div").click(function () {
+            selectedColor = this.id;
+        });
+    });
+
+    function kaydet() {
+        var paintCanvas = document.getElementById("paintCanvas");
+        window.open(paintCanvas.toDataURL("image/png"), "sonDurum");
+    }
+</script>
+
+<main class="mdl-layout__content mdl-color--grey-100">
+    <div id="paint" class="mdl-grid demo-content">
+
+        <canvas id="myCanvas" width="900" height="450" style="border:1px solid black"></canvas>
+    </div>
+    <div class="mdl-grid demo-content">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="javascript:clearArea();return false;">
+
+                Löschen
+
+            </button>
+
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select class="mdl-textfield__input" id="selWidth">
+                <option value="1">1</option>
+                <option value="3" selected="selected">3</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+                <option value="9">9</option>
+                <option value="11">11</option>
+            </select>
+
+            <label class="mdl-textfield__label" for="selWidth">Stärke</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select id="selColor" class="mdl-textfield__input">
+                <option value="black" selected="selected">Schwarz</option>
+                <option value="blue">Blau</option>
+                <option value="red">Rot</option>
+                <option value="green">Grün</option>
+                <option value="yellow">Gelb</option>
+                <option value="gray">Grau</option>
+            </select>
+            <label class="mdl-textfield__label" for="selColor">Farbe</label>
+        </div>
+    </div >
+</main>
+
+<script src="js/loadCanvas.js"></script>

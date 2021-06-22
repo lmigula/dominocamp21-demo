@@ -1,0 +1,32 @@
+{% extends "partials/_layout.njk" %}
+{% block content %}
+ <main class="mdl-layout__content">
+        <div class="page-content">
+
+
+{%- for item in pagination.items %}
+  <div>
+    <a href="/names/{{ item['@unid'] | slug }}">
+    {{ item['FirstName'] }} {{ item['LastName'] }}
+    </a>
+  </div>
+{% endfor -%}
+
+
+<nav aria-labelledby="my-pagination">
+
+  <ol>
+    <li>
+    {% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">Start</a>
+    {% else %}First{% endif %}</li>
+{%- for pageEntry in pagination.pages %}
+    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"
+    {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Seite {{ loop.index }}</a></li>
+{%- endfor %}
+    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Ende</a>{% else %}Last{% endif %}</li>
+  </ol>
+</nav>
+
+        </div>
+    </main>
+{% endblock %}

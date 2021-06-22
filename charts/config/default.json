@@ -1,0 +1,11 @@
+{
+    "express": {
+        "port": 6060
+    },
+    "enviroment": "default",
+    "domino": {
+        "httpUser": "demoUser",
+        "httpPassword": "demoPassword",
+        "fakenames": "lm/fakenames.nsf"
+    }
+}

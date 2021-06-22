@@ -1,0 +1,55 @@
+<div class="mdl-grid demo-content" id="d3"></div>
+
+<div class=buttonBar>
+    <button onclick="refreshData()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Daten aktualisieren
+    </button>
+    <button onclick="downloadPdf()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+         pdf erstellen
+    </button>
+
+</div>
+
+<div class="mdl-grid demo-content">
+
+    <div id="sortChart"></div>
+</div>
+
+<div class="mdl-grid demo-content">
+
+    <div id="stackedChart"></div>
+</div>
+
+<div class="mdl-grid demo-content">
+
+    <div id="pieChart"></div>
+</div>
+
+<div class="mdl-grid demo-content">
+
+    <div id="force"></div>
+</div>
+
+<style>
+    .demo-content {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        margin-top: 50px;
+        height: 350px;
+        vertical-align: top;
+        overflow: hidden;
+    }
+    .demo-content svg {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script src="js/util.js"></script>
+
+<script src="js/loadd3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js"></script>
